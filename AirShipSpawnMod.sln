@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirShipSpawnMod", "AirShipSpawnMod.csproj", "{B9F134E9-081F-4F91-B6EB-26EF5275BACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9F134E9-081F-4F91-B6EB-26EF5275BACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F134E9-081F-4F91-B6EB-26EF5275BACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F134E9-081F-4F91-B6EB-26EF5275BACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F134E9-081F-4F91-B6EB-26EF5275BACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D2F86C1-2B22-4B4B-A5F7-757343BDAF17}
+	EndGlobalSection
+EndGlobal
