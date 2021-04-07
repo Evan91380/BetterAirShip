@@ -18,8 +18,11 @@
         <DefineConstants>$(DefineConstants);ITCH</DefineConstants>
     </PropertyGroup>
 
+
     <ItemGroup>
 		<Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
+		<EmbeddedResource Include="Resource\Cokpit.png" />
+		<EmbeddedResource Include="Resource\Vault.png" />
 
         <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.3.0">
           <PrivateAssets>all</PrivateAssets>

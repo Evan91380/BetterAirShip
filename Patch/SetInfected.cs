@@ -18,7 +18,7 @@ namespace AirShipSpawn.Patch {
             randomList = new List<byte>();
 
             while (randomList.Count < 3) { 
-                MyNumber = (byte) random.Next(0, 5);
+                MyNumber = (byte) random.Next(0, 8);
                 if (!randomList.Contains(MyNumber))
                     randomList.Add(MyNumber);
             }
