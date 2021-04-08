@@ -30,7 +30,7 @@ No Changelog here for the moment.
 ## Games Options :
 ![GmesOptions](https://cdn.discordapp.com/attachments/720974768806821898/829726593692991598/Screenshot_6.png)
 
-| Name | Descriptino | Type | Default |
+| Name | Description | Type | Default |
 |----------|-------------|-------------|-------------|
 | Type of Spawn | Defined, the mode of appearance. | Normal / Fixed / Random | Normal
 | Add new spawn | Allows to define if the new appearance places are added. | On / Off | Off
