@@ -8,9 +8,11 @@ This mod makes the AirShip map more customizable and playable by fixing all the 
 # Releases :
 | Among Us - Version| Mod Version | Link |
 |----------|-------------|-----------------|
-| 2020.3.31.3s | V1.0.0 | [Download](https://github.com/Hardel-DW/TooManyRolesMods/releases/download/V1.1/Among.Us.-.ToManyRolesMods.zip) |
-<details>
-    <summary>Changelog</summary>
+| 2020.3.31.3s | V1.0.0 | [Download](https://github.com/Evan91380/BetterAirShip/releases/download/v1/Among.Us.zip) |
+<details> <summary>Changelog</summary>
+# Inital Version
+
+No Changelog here for the moment.
 </details>
 
 # Installation
@@ -23,8 +25,18 @@ This mod makes the AirShip map more customizable and playable by fixing all the 
 5. Play the game.
 
 ![Install](https://i.imgur.com/pvBAyZN.png)
-
 # Feature :
+
+## Games Options :
+![GmesOptions](https://cdn.discordapp.com/attachments/720974768806821898/829726593692991598/Screenshot_6.png)
+
+| Name | Descriptino | Type | Default |
+|----------|-------------|-------------|-------------|
+| Type of Spawn | Defined, the mode of appearance. | Normal / Fixed / Random | Normal
+| Add new spawn | Allows to define if the new appearance places are added. | On / Off | Off
+| Choose spawn after meeting | Allows to tell, if the appearance interface appears after a meeting. | On / Off | Off |
+| Min time for door swipe | Defines the minimum time to pass the card. | Seconds | 0.4s
+
 
 ## More Spawn Point :
 From us point of appearance on AirShip, which allow more flexibility.
