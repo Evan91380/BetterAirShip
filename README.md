@@ -52,7 +52,7 @@ A new option allows you to define whether the appearance menu appears after a me
 In case it is deactivated, the players appear around the meeting table.
 
 ## Synchronization of spawn locations :
-| Type | Descriptino |
+| Type | Description |
 |----------|-------------|
 | Normal | Nothing changes in the basic operation of the game. |
 | Fixed | The spawn points will always the same for all games: Kitchen, Main Hall and Cargo Bay, If the custom spanw point are activated Kitchen will be replaced by Cokpit |
