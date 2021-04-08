@@ -18,9 +18,14 @@
         <DefineConstants>$(DefineConstants);ITCH</DefineConstants>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Resource\airship" />
+    </ItemGroup>
+
 
     <ItemGroup>
 		<Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
+		<EmbeddedResource Include="Resource\airship" />
 		<EmbeddedResource Include="Resource\Cokpit.png" />
 		<EmbeddedResource Include="Resource\Vault.png" />
 
