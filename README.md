@@ -43,7 +43,7 @@ From us point of appearance on AirShip, which allow more flexibility.
 A total of 2 new appearance points have arrived.
 With custom animations, and sound design in the future.
 
-| Cokpit | Vault |
+| Cockpit | Vault |
 |----------|:-------------:|
 | ![Figure 1-1](https://cdn.discordapp.com/attachments/720974768806821898/829723251147276328/Screenshot_4.png) | ![Figure 1-1](https://cdn.discordapp.com/attachments/813549021675257926/829400582610616400/Screenshot_5.png) |
 
