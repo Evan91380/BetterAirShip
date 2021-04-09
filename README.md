@@ -75,7 +75,7 @@ At the current state of the game there is no perma ban system for the game. The 
 Yes. Every player in the lobby must have the mod installed.
 
 If you'd like to contact me about anything else:
-Discord: Hardel#7401
+Discord: Evan#8831 && Hardel#7401
 Discord Server: https://hardel.fr/discord
 
 # Bugs/Feature suggestions
