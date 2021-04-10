@@ -15,7 +15,7 @@ namespace AirShipSpawn{
 
         public Harmony Harmony { get; } = new Harmony(Id);
 
-        public static CustomOptionHeader AirshipHeader = CustomOptionHeader.AddHeader("\n[2EADFFFF]BetterAirShip Options :[]", false);
+        public static CustomOptionHeader AirshipHeader = CustomOptionHeader.AddHeader("[2EADFFFF]BetterAirShip Options :[]");
         public static CustomStringOption TypeSpawn = CustomStringOption.AddString("Type Of Spawn", new string[] { "Normal", "Fixed", "Synchronized" });
         public static CustomToggleOption NewSpawn = CustomToggleOption.AddToggle("Add new spawn", false);
         public static CustomToggleOption MeetingRespawn = CustomToggleOption.AddToggle("Choose spawn after meeting", true);
@@ -30,7 +30,8 @@ namespace AirShipSpawn{
             AirShipSpawn.Utility.ResourceLoader.LoadAssets();
             CustomOption.ShamelessPlug = false;
 
-            minTimeDoor.HudStringFormat = (_, name, value) => $"{name}: {value}s";
+            AirshipHeader.HudStringFormat = (option, name, value) => $"\n{name}";
+            minTimeDoor.ValueStringFormat = (_,value) => $"{value}s";
 
         }
     }
