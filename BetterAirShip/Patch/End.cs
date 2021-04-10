@@ -1,6 +1,6 @@
 using HarmonyLib;
 
-namespace AirShipSpawn.Patch {
+namespace BetterAirShip.Patch {
 
     [HarmonyPatch(typeof(AmongUsClient), nameof(AmongUsClient.ExitGame))]
     public static class EndGamePatch {

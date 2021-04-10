@@ -1,4 +1,4 @@
-namespace AirShipSpawn {
+namespace BetterAirShip {
     public enum CustomRPC {
         SetSpawn = 100
     }

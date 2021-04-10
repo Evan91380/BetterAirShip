@@ -1,11 +1,10 @@
-﻿using AirShipSpawn;
-using HarmonyLib;
+﻿using HarmonyLib;
 using Hazel;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace AirShipSpawn.Patch {
+namespace BetterAirShip.Patch {
+
     [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.RpcSetInfected))]
     class SetInfectedPatch {
         public static void Postfix() {
@@ -18,7 +17,7 @@ namespace AirShipSpawn.Patch {
             randomList = new List<byte>();
 
             while (randomList.Count < 3) {
-                MyNumber = (byte) random.Next(0, AirshipSpawn.NewSpawn.GetValue() ? 8 : 6);
+                MyNumber = (byte) random.Next(0, BetterAirShip.NewSpawn.GetValue() ? 8 : 6);
                 if (!randomList.Contains(MyNumber))
                     randomList.Add(MyNumber);
             }

@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnhollowerBaseLib;
 using UnityEngine;
 
-namespace AirShipSpawn.Utility
-{
-    class HelperSprite
-    {
-        public static Sprite LoadSpriteFromEmbeddedResources(string resource, float PixelPerUnit)
-        {
-            try
-            {
+namespace BetterAirShip.Utility {
+    class HelperSprite {
+        public static Sprite LoadSpriteFromEmbeddedResources(string resource, float PixelPerUnit) {
+            try {
                 System.Reflection.Assembly myAssembly = System.Reflection.Assembly.GetExecutingAssembly();
                 System.IO.Stream myStream = myAssembly.GetManifestResourceStream(resource);
                 byte[] image = new byte[myStream.Length];
@@ -25,8 +20,7 @@ namespace AirShipSpawn.Utility
 
         internal delegate bool d_LoadImage(IntPtr tex, IntPtr data, bool markNonReadable);
         internal static d_LoadImage iCall_LoadImage;
-        private static bool LoadImage(Texture2D tex, byte[] data, bool markNonReadable)
-        {
+        private static bool LoadImage(Texture2D tex, byte[] data, bool markNonReadable) {
             if (iCall_LoadImage == null)
                 iCall_LoadImage = IL2CPP.ResolveICall<d_LoadImage>("UnityEngine.ImageConversion::LoadImage");
 

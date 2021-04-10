@@ -1,6 +1,7 @@
 using HarmonyLib;
 
-namespace AirShipSpawn.Patch {
+namespace BetterAirShip.Patch {
+
     [HarmonyPatch(typeof(StatsManager), nameof(StatsManager.AmBanned), MethodType.Getter)]
     public static class BanPatch {
         public static void Postfix(out bool __result) {

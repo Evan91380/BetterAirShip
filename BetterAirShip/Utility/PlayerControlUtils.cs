@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AirShipSpawn.Utility {
+namespace BetterAirShip.Utility {
     public class PlayerControlUtils {
         public const float OffsetTruePositionX = 0;
         public const float OffsetTruePositionY = 0.366667f;
