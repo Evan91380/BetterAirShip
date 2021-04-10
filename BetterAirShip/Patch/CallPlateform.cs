@@ -8,7 +8,10 @@ namespace BetterAirShip.Patch {
     [HarmonyPatch(typeof(AirshipStatus), nameof(AirshipStatus.OnEnable))]
     public static class CallPlateform {
         public static void Postfix(AirshipStatus __instance) {
-            Tasks.CreateThisTask(new Vector3(5.531f, 9.788f, 1f));
+            Tasks.CreateThisTask(new Vector3(5.531f, 9.788f, 1f), new Vector3(0f, 180f, 0f), () => {
+                var Plateform = Object.FindObjectOfType<MovingPlatformBehaviour>();
+
+            });
 
             /*            GameObject CallPlateform = new GameObject("Call Plateform");
                         CallPlateform.transform.position = new Vector3(5.531f, 9.788f, 1f);

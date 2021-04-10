@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace BetterAirShip.Systems {
 
-    [RegisterInIl2Cpp]
-    class Tasks : MonoBehaviour {
-        public Tasks(IntPtr ptr) : base(ptr) { }
+	[RegisterInIl2Cpp]
+	class Tasks : MonoBehaviour {
+		public Tasks(IntPtr ptr) : base(ptr) { }
 
 		public static List<GameObject> AllCustomPlateform = new List<GameObject>();
 		public static Tasks NearestTask = null;
@@ -16,6 +16,7 @@ namespace BetterAirShip.Systems {
 		private BoxCollider2D collider;
 		public float UsableDistance = 1f;
 		public byte Id;
+		public Action OnClick;
 
 		private void Awake() {
 			renderer = gameObject.AddComponent<SpriteRenderer>();
@@ -43,7 +44,7 @@ namespace BetterAirShip.Systems {
 		}
 
 		public void Use(PlayerControl LocalPlayer) {
-			BetterAirShip.Logger.LogInfo("Hey !");
+			OnClick();
 		}
 
 		public void SetOutline(bool On) {
@@ -54,15 +55,17 @@ namespace BetterAirShip.Systems {
 			}
 		}
 
-		public static void CreateThisTask(Vector3 Position) {
+		public static void CreateThisTask(Vector3 Position, Vector3 Rotation, Action OnClick) {
 			GameObject CallPlateform = new GameObject("Call Plateform");
 			CallPlateform.transform.position = Position;
+			CallPlateform.transform.localRotation = Quaternion.Euler(Rotation);
 			CallPlateform.transform.localScale = new Vector3(1f, 1f, 2f);
 			CallPlateform.layer = 12;
 			CallPlateform.SetActive(true);
 
 			Tasks CallPlateformTasks = CallPlateform.AddComponent<Tasks>();
 			CallPlateformTasks.Id = 1;
+			CallPlateformTasks.OnClick = OnClick;
 			AllCustomPlateform.Add(CallPlateform);
 		}
 
@@ -106,6 +109,14 @@ namespace BetterAirShip.Systems {
 			}
 
 			return true;
+		}
+	}
+
+	[HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.Start))]
+	public static class ResetVariable {
+		public static void Prefix(ShipStatus __instance) {
+			Tasks.NearestTask = null;
+			Tasks.AllCustomPlateform = new List<GameObject>();
 		}
 	}
 }
