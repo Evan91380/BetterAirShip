@@ -14,8 +14,10 @@ namespace BetterAirShip.Patch {
         public static bool TeleportationStarted = false;
 
         public static void Prefix(PlayerControl __instance) {
-            if (!TeleportationStarted && Vector2.Distance(__instance.transform.position, new Vector2(17.331f, 15.236f)) < 0.5f && UnityEngine.Object.FindObjectOfType<AirshipStatus>() != null)
+            if (BetterAirShip.Teleportation.GetValue()) {
+                if (!TeleportationStarted && Vector2.Distance(__instance.transform.position, new Vector2(17.331f, 15.236f)) < 0.5f && UnityEngine.Object.FindObjectOfType<AirshipStatus>() != null)
                 Coroutines.Start(CoTeleportPlayer(__instance));
+            }
         }
 
         private static IEnumerator BlackScreenFade(float Duration, bool fadeout) {

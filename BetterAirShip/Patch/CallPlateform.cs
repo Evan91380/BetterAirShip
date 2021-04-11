@@ -17,19 +17,21 @@ namespace BetterAirShip.Patch {
             Tasks.AllCustomPlateform.Clear();
             Tasks.NearestTask = null;
 
-            Tasks.CreateThisTask(new Vector3(5.531f, 9.788f, 1f), new Vector3(0f, 0f, 0f), () => {
-                var Plateform = Object.FindObjectOfType<MovingPlatformBehaviour>();
+            if (BetterAirShip.CallPlateform.GetValue()) {
+                Tasks.CreateThisTask(new Vector3(5.531f, 9.788f, 1f), new Vector3(0f, 0f, 0f), () => {
+                    var Plateform = Object.FindObjectOfType<MovingPlatformBehaviour>();
 
-                if (!Plateform.IsLeft && !PlateformIsUsed)
-                    UsePlateforRpc(Plateform, false);
-            });
+                    if (!Plateform.IsLeft && !PlateformIsUsed)
+                        UsePlateforRpc(Plateform, false);
+                });
 
-            Tasks.CreateThisTask(new Vector3(10.148f, 9.806f, 1f), new Vector3(0f, 180f, 0f), () => {
-                var Plateform = Object.FindObjectOfType<MovingPlatformBehaviour>();
+                Tasks.CreateThisTask(new Vector3(10.148f, 9.806f, 1f), new Vector3(0f, 180f, 0f), () => {
+                    var Plateform = Object.FindObjectOfType<MovingPlatformBehaviour>();
 
-                if (Plateform.IsLeft && !PlateformIsUsed)
-                    UsePlateforRpc(Plateform, true);
-            });
+                    if (Plateform.IsLeft && !PlateformIsUsed)
+                        UsePlateforRpc(Plateform, true);
+                });
+            }
         }
 
         public static void SyncPlateform(bool isLeft) {
