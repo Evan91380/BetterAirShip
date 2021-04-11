@@ -26,11 +26,6 @@ namespace BetterAirShip.Patch {
                     }
 
                     if (BetterAirShip.TypeSpawn.GetValue() != 0){
-/*                        for (int i = 0; i < Spawn.Length; i++)
-                            AirshipSpawn.Logger.LogInfo($"Name : {Spawn[i].Name}, i : {i}");
-                        for (int i = 0; i < SpawnPoints.Count; i++)
-                            AirshipSpawn.Logger.LogInfo($"i : {SpawnPoints[i]}");*/
-
                         if (BetterAirShip.TypeSpawn.GetValue() == 1)
                             __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { BetterAirShip.NewSpawn.GetValue() ? Spawn[7] : Spawn[3], Spawn[2], Spawn[5] };
                         else if (BetterAirShip.TypeSpawn.GetValue() == 2)
@@ -64,7 +59,7 @@ namespace BetterAirShip.Patch {
                     Position.y = 14.4f;
 
                 float marge = (13f - 9f) / halfPlayerValue;
-                Position.x += marge * halfPlayerValue;
+                Position.x += marge;
 
                 return Position;
             }

@@ -24,11 +24,11 @@ namespace BetterAirShip {
         public static CustomNumberOption minTimeDoor = CustomNumberOption.AddNumber("Min time for door swipe", 0.4f, 0f, 1f, 0.05f);
 
         public override void Load() {
+            GameOptionsFormat();
             Logger = Log;
             Harmony.PatchAll();
             ResourceLoader.LoadAssets();
             RegisterInIl2CppAttribute.Register();
-            GameOptionsFormat();
         }
 
         private void GameOptionsFormat() {

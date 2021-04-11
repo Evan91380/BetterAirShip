@@ -2,6 +2,7 @@ using HarmonyLib;
 using Hazel;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace BetterAirShip.Patch {
 
@@ -11,6 +12,22 @@ namespace BetterAirShip.Patch {
             if (CallId == (byte) CustomRPC.SetSpawn) {
                 List<byte> spawnPoints = reader.ReadBytesAndSize().ToList();
                 SpawnInMinigamePatch.SpawnPoints = spawnPoints;
+
+                return false;
+            }
+
+            if (CallId == (byte) CustomRPC.DoorSyncToilet) {
+                int Id = reader.ReadInt32();
+
+                PlainDoor DoorToSync = Object.FindObjectsOfType<PlainDoor>().FirstOrDefault(door => door.Id == Id);
+                DoorToSync.SetDoorway(true);
+
+                return false;
+            }
+
+            if (CallId == (byte) CustomRPC.SyncPlateform) {
+                bool isLeft = reader.ReadBoolean();
+                CallPlateform.SyncPlateform(isLeft);
 
                 return false;
             }
