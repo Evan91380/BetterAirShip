@@ -87,6 +87,14 @@ namespace BetterAirShip.Systems {
         }
     }
 
+    [HarmonyPatch(typeof(LobbyBehaviour), nameof(LobbyBehaviour.Start))]
+    public static class ResetUseButton {
+        public static void Prefix() {
+            Tasks.AllCustomPlateform.Clear();
+            Tasks.NearestTask = null;
+        }
+    }
+
     [HarmonyPatch(typeof(UseButtonManager), nameof(UseButtonManager.DoClick))]
     public static class UseButtonOnClickPatch {
         public static bool Prefix(UseButtonManager __instance) {
