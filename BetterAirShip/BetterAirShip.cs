@@ -30,9 +30,8 @@ namespace BetterAirShip {
         public static CustomToggleOption SecondAdmin = CustomToggleOption.AddToggle("Add Second Admin", false);
         public static CustomToggleOption MoveElectricalReactor = CustomToggleOption.AddToggle("Move Electical GapRoom", false);
         public static CustomToggleOption MoveElectricalCargo = CustomToggleOption.AddToggle("Move Electical Cargo", false);
-        public static CustomToggleOption CargoGas = CustomToggleOption.AddToggle("Move Electrical", false);
+        public static CustomToggleOption CargoGas = CustomToggleOption.AddToggle("Move Fuel", false);
         public static CustomToggleOption VitalsMedbay = CustomToggleOption.AddToggle("Move Vitals", false);
-        public static CustomToggleOption Fuel = CustomToggleOption.AddToggle("Move Fuel", false);
         public static CustomToggleOption Divert = CustomToggleOption.AddToggle("Move Divert", false);
 
         public override void Load() {

@@ -17,31 +17,18 @@ namespace BetterAirShip.Patch {
                 AdminTable.transform.localScale = new Vector3(1f, 1f, 1f);
 
                 // Maping Float
-                GameObject MapFloating = GameObject.Find("Medbay/cockpit_mapfloating");
+                GameObject MapFloating = GameObject.Find("Cockpit/cockpit_mapfloating");
                 MapFloating.transform.position = new Vector2(-17.736f, 2.36f);
                 MapFloating.transform.rotation = Quaternion.Euler(new Vector3(0.000f, 0.000f, 350f));
                 MapFloating.transform.localScale = new Vector3(1f, 1f, 1f);
             }
 
-            if (BetterAirShip.MoveElectricalCargo.GetValue()) {
-                // Electical Carho
-                GameObject ElectricalCargo = GameObject.Find("/Storage/task_lightssabotage (cargo)");
-                ElectricalCargo.transform.position = new Vector2(-9.680f, 12.711f);
-                ElectricalCargo.transform.localScale = new Vector3(1f, 1f, 1f);
-
-                // Support
-                GameObject OriginalSupport = GameObject.Find("Vault/cockpit_comms");
-                GameObject SupportElectrical = Object.Instantiate(OriginalSupport, OriginalSupport.transform);
-                ElectricalCargo.transform.position = new Vector2(-9.680f, 12.787f);
-                ElectricalCargo.transform.localScale = new Vector3(1f, 1f, 1f);
-            }
-
             if (BetterAirShip.SecondAdmin.GetValue()) {
                 // New Admin
                 GameObject NewAdmin = Object.Instantiate(AdminTable.gameObject, Object.FindObjectsOfType<GameObject>().ToList().Find(o => o.name == "HallwayMain").transform);
-                NewAdmin.transform.position = new Vector3(5.1f, 3.457f, 1f);
+                NewAdmin.transform.position = new Vector3(5.078f, 3.4f, 1f);
                 NewAdmin.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 76.1f));
-                NewAdmin.transform.localScale = new Vector3(1f, 1.2f, 1f);
+                NewAdmin.transform.localScale = new Vector3(1.200f, 1.700f, 1f)
             }
             
             if (BetterAirShip.VitalsMedbay.GetValue()) {
@@ -63,13 +50,26 @@ namespace BetterAirShip.Patch {
             if (BetterAirShip.Divert.GetValue()) {
                 // Divert
                 GameObject DivertRecieve = GameObject.Find("HallwayMain/DivertRecieve");
-                DivertRecieve.transform.position = new Vector2(13.35f, 1.659f);
+                DivertRecieve.transform.position = new Vector2(13.35f, -1.659f);
             }
 
             if (BetterAirShip.MoveElectricalReactor.GetValue()) {
                 // Light
-                GameObject Electrical = GameObject.Find("GapRoom/task_lightssabotage(gap)");
+                GameObject Electrical = GameObject.Find("GapRoom/task_lightssabotage (gap)");
                 Electrical.transform.position = new Vector2(19.339f, -3.665f);
+            }
+
+            if (BetterAirShip.MoveElectricalCargo.GetValue()) {
+                // Electical Carho
+                GameObject ElectricalCargo = GameObject.Find("Storage/task_lightssabotage (cargo)");
+                ElectricalCargo.transform.position = new Vector2(-9.680f, 12.711f);
+                ElectricalCargo.transform.localScale = new Vector3(1f, 1f, 1f);
+
+                // Support
+                GameObject OriginalSupport = GameObject.Find("Vault/cockpit_comms");
+                GameObject SupportElectrical = Object.Instantiate(OriginalSupport, OriginalSupport.transform);
+                ElectricalCargo.transform.position = new Vector2(-9.680f, 12.787f);
+                ElectricalCargo.transform.localScale = new Vector3(1f, 1f, 1f);
             }
         }
     }
