@@ -53,16 +53,19 @@ namespace BetterAirShip.Patch {
             }
 
             public static Vector3 GetMeetingPosition(byte PlayerId) {
-                float halfPlayerValue = PlayerId / 2;
-
+                int halfPlayerValue = (int) Mathf.Round(PlayerControl.AllPlayerControls.Count / 2);
                 Vector3 Position = new Vector3(9f, 16f, 0);
-                if (PlayerId % 2 == 0)
+
+                float xIndex = ((PlayerId - (PlayerId % 2)) / 2);
+                float yIndex = (PlayerId % 2);
+
+                float marge = (13f - 9f) / halfPlayerValue;
+                Position.x += marge * xIndex;
+
+                if (yIndex == 1)
                     Position.y = 14.4f;
 
-                Position.x += 0.73f * halfPlayerValue;
-
-                BetterAirShip.Logger.LogInfo($"Position x : {Position.x}, halfPlayerValue : {halfPlayerValue}");
-
+                BetterAirShip.Logger.LogInfo($"Position x : {Position.x}, Position y : {Position.y},  indexX : {xIndex}, IndexY : {yIndex}, halfPlayerValue : {halfPlayerValue}");
                 return Position;
             }
         }

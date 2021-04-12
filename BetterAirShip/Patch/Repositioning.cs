@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System.Linq;
 using UnityEngine;
 
 namespace BetterAirShip.Patch {
@@ -37,7 +36,7 @@ namespace BetterAirShip.Patch {
                 GameObject Electrical = GameObject.Find("GapRoom/task_lightssabotage (gap)");
 
                 if (BetterAirShip.MoveElectrical.GetValue() == 1) {
-                    // Electical Carho
+                    // Electical Cargo
                     Electrical.transform.position = new Vector2(-8.818f, 13.184f);
                     Electrical.transform.localScale = new Vector3(0.909f, 0.818f, 1f);
 
@@ -47,7 +46,7 @@ namespace BetterAirShip.Patch {
                     SupportElectrical.transform.position = new Vector2(-8.792f, 13.242f);
                     SupportElectrical.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
-               if (BetterAirShip.MoveElectrical.GetValue() == 2) {
+                if (BetterAirShip.MoveElectrical.GetValue() == 2) {
                     // Light
                     Electrical.transform.position = new Vector2(19.339f, -3.665f);
                 }

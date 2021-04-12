@@ -20,7 +20,7 @@ namespace BetterAirShip.Patch {
             }
         }
 
-        private static IEnumerator BlackScreenFade(float Duration, bool fadeout) {
+/*        private static IEnumerator BlackScreenFade(float Duration, bool fadeout) {
             float elapsedTime = 0;
             float alpha = fadeout ? 0f : 1f;
 
@@ -42,19 +42,19 @@ namespace BetterAirShip.Patch {
 
             HudManager.Instance.FullScreen.enabled = false;
             yield break;
-        }
+        }*/
 
         private static IEnumerator Fade(bool fadeAway, bool enableAfterFade) {
             DestroyableSingleton<HudManager>.Instance.FullScreen.enabled = true;
 
             if (fadeAway) {
-                for (float i = 1; i >= 0; i -= 2 / Time.deltaTime) {
+                for (float i = 1; i >= 0; i -= 1 / Time.deltaTime) {
                     DestroyableSingleton<HudManager>.Instance.FullScreen.color = new Color(0, 0, 0, i);
                     yield return null;
                 }
             }
             else {
-                for (float i = 0; i <= 1; i += 2 / Time.deltaTime) {
+                for (float i = 0; i <= 1; i += 1 / Time.deltaTime) {
                     DestroyableSingleton<HudManager>.Instance.FullScreen.color = new Color(0, 0, 0, i);
                     yield return null;
                 }
