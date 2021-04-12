@@ -51,8 +51,8 @@ From us point of appearance on AirShip, wdhich allow more flexibility.
 A total of 3 new appearance points have arrived.
 With custom animations, and sound design in the future.
 
-| Cockpit, Vault and Medical |
-|----------|:-------------:|
+| Cockpit and Vault and Medical |
+|-------------|
 | ![Figure 1-1](https://cdn.discordapp.com/attachments/720974768806821898/830926722970943548/Screenshot_5.png) |
 
 ## Meeting Respawn
@@ -72,28 +72,28 @@ As the game does not have a maximum time to pass the map, no game options are as
 
 ## Move admin :
 | Don't move | Right of Cockpit | Main Hall |
-|----------|:-------------:|
-| ![Figure 1-1](https://imgur.com/Vc15SY2) | ![Figure 1-1](https://imgur.com/W8SIWmL) | ![Figure 1-1](https://imgur.com/bSJeXsz) |
+|----------|-------------|-------------|
+| ![Figure 1-1](https://imgur.com/Vc15SY2.png) | ![Figure 1-1](https://imgur.com/W8SIWmL.png) | ![Figure 1-1](https://imgur.com/bSJeXsz.png) |
 
 ## Move Electricity in gap room :
 | Don't move | Vault | Electricity |
-|----------|:-------------:|
-| ![Figure 1-1](https://imgur.com/H2FJM9g) | ![Figure 1-1](https://imgur.com/nQseQKk) | ![Figure 1-1](https://imgur.com/MFkSvNi) |
+|----------|-------------|-------------|
+| ![Figure 1-1](https://imgur.com/H2FJM9g.png) | ![Figure 1-1](https://imgur.com/nQseQKk.png) | ![Figure 1-1](https://imgur.com/MFkSvNi.png) |
 
 ## Move Vitals :
 | Off | On |
-|----------|:-------------:|
-| ![Figure 1-1](https://imgur.com/aePtR5K) | ![Figure 1-1](https://imgur.com/C0ZUh8i) |
+|----------|-------------|
+| ![Figure 1-1](https://imgur.com/aePtR5K.png) | ![Figure 1-1](https://imgur.com/C0ZUh8i.png) |
 
 ## Move Fuel :
 | Off | On |
-|----------|:-------------:|
-| ![Figure 1-1](https://imgur.com/udZxp8K) | ![Figure 1-1](https://imgur.com/AIFJAvK) |
+|----------|-------------|
+| ![Figure 1-1](https://imgur.com/udZxp8K.png) | ![Figure 1-1](https://imgur.com/AIFJAvK.png) |
 
 ## Move Divert :
 | Off | On |
-|----------|:-------------:|
-| ![Figure 1-1](https://imgur.com/EyKTm8m) | ![Figure 1-1](https://imgur.com/WANt6k9) |
+|----------|-------------|
+| ![Figure 1-1](https://imgur.com/EyKTm8m.png) | ![Figure 1-1](https://imgur.com/WANt6k9.png) |
 
 
 
