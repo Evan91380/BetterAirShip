@@ -55,6 +55,21 @@ With custom animations, and sound design in the future.
 |-------------|
 | ![Figure 1-1](https://cdn.discordapp.com/attachments/720974768806821898/830926722970943548/Screenshot_5.png) |
 
+## Meeting Teleportation
+By going to the right elevator, you will be teleported to Secrutity.
+/!\ Attention this feature requires a private server, Disable the game options if you are on a public server.
+
+## Communication Sabotage
+The communication sabotage was adjusted to solve the game's problems.
+The ghosts can't fix it anymore, and the imposters can now.
+
+## Moving Plateform
+The platform now has two buttons on the right and left side allowing its activation to call the platform if it is on the other side. 
+
+## Toilet door
+The doors of the toillettes are now synchronized between all the players.
+If one player opens a door the other players will see it.
+
 ## Meeting Respawn
 A new option allows you to define whether the appearance menu appears after a meeting.
 In case it is deactivated, the players appear around the meeting table.
