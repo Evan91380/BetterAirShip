@@ -20,30 +20,6 @@ namespace BetterAirShip.Patch {
             }
         }
 
-/*        private static IEnumerator BlackScreenFade(float Duration, bool fadeout) {
-            float elapsedTime = 0;
-            float alpha = fadeout ? 0f : 1f;
-
-            DestroyableSingleton<HudManager>.Instance.FullScreen.enabled = true;
-            DestroyableSingleton<HudManager>.Instance.FullScreen.color = new Color(0f, 0f, 0f, fadeout ? 0f : 1f);
-
-            while (elapsedTime < Duration) {
-                elapsedTime += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
-            }
-
-            while (fadeout ? alpha < 1 : alpha > 0) {
-                if (fadeout) alpha += (5 * Time.deltaTime);
-                else alpha -= (5 * Time.deltaTime);
-
-                DestroyableSingleton<HudManager>.Instance.FullScreen.color = new Color(0f, 0f, 0f, alpha);
-                yield return new WaitForEndOfFrame();
-            }
-
-            HudManager.Instance.FullScreen.enabled = false;
-            yield break;
-        }*/
-
         private static IEnumerator Fade(bool fadeAway, bool enableAfterFade) {
             DestroyableSingleton<HudManager>.Instance.FullScreen.enabled = true;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BetterAirShip.Patch;
 using HarmonyLib;
 using Reactor;
 using UnityEngine;
@@ -32,7 +33,7 @@ namespace BetterAirShip.Systems {
         public float CanUse(GameData.PlayerInfo PC, out bool CanUse) {
             PlayerControl Player = PC.Object;
             Vector2 truePosition = Player.GetTruePosition();
-            CanUse = !PC.IsDead && Player.CanMove;
+            CanUse = (!PC.IsDead && Player.CanMove && !CallPlateform.PlateformIsUsed && !UnityEngine.Object.FindObjectOfType<MovingPlatformBehaviour>().InUse);
             float Distance = float.MaxValue;
 
             if (CanUse) {

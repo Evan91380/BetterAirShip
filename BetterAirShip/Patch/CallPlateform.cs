@@ -12,6 +12,7 @@ namespace BetterAirShip.Patch {
     public static class CallPlateform {
 
         public static bool PlateformIsUsed = false;
+        public static PlatformConsole PlateformConsole = Object.FindObjectOfType<PlatformConsole>();
 
         public static void Postfix(AirshipStatus __instance) {
             Tasks.AllCustomPlateform.Clear();
@@ -60,10 +61,30 @@ namespace BetterAirShip.Patch {
             yield return Effects.Slide3D(Plateform.transform, sourcePos, targetPos, PlayerControl.LocalPlayer.MyPhysics.Speed);
 
             Plateform.IsLeft = !Plateform.IsLeft;
-			yield return Effects.Wait(0.1f);
+            yield return Effects.Wait(0.1f);
             PlateformIsUsed = false;
 
-			yield break;
+            yield break;
         }
-	}
+    }
+
+    [HarmonyPatch(typeof(PlatformConsole), nameof(PlatformConsole.CanUse))]
+    public static class UsePlateformPatch {
+        public static bool Prefix(ref float __result, PlatformConsole __instance, [HarmonyArgument(0)] GameData.PlayerInfo pc, [HarmonyArgument(1)] out bool canUse, [HarmonyArgument(2)] out bool couldUse) {
+            float num = float.MaxValue;
+            PlayerControl @object = pc.Object;
+            couldUse = (!CallPlateform.PlateformIsUsed && !pc.IsDead && @object.CanMove && !__instance.Platform.InUse && Vector2.Distance(__instance.Platform.transform.position, __instance.transform.position) < 2f);
+            canUse = couldUse;
+
+            if (canUse) {
+                Vector2 truePosition = @object.GetTruePosition();
+                Vector3 position = __instance.transform.position;
+                num = Vector2.Distance(truePosition, position);
+                canUse &= (num <= __instance.UsableDistance && !PhysicsHelpers.AnythingBetween(truePosition, position, Constants.ShipOnlyMask, false));
+            }
+
+            __result = num;
+            return false;
+        }
+    }
 }
