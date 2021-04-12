@@ -10,8 +10,7 @@ namespace BetterAirShip.Patch {
 
             MapConsole AdminTable = Object.FindObjectOfType<MapConsole>();
 
-            if(BetterAirShip.MoveAdmin.GetValue() != 0)
-            {
+            if(BetterAirShip.MoveAdmin.GetValue() != 0) {
                 GameObject MapFloating = GameObject.Find("Cockpit/cockpit_mapfloating");
 
                 if (BetterAirShip.MoveAdmin.GetValue() == 1) {
