@@ -17,7 +17,7 @@ namespace BetterAirShip.Patch {
             randomList = new List<byte>();
 
             while (randomList.Count < 3) {
-                MyNumber = (byte) random.Next(0, BetterAirShip.NewSpawn.GetValue() ? 9 : 6);
+                MyNumber = (byte) random.Next(0, BetterAirShip.NewSpawn.GetValue() ? 10 : 6);
                 if (!randomList.Contains(MyNumber))
                     randomList.Add(MyNumber);
             }

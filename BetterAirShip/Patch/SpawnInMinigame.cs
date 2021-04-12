@@ -21,14 +21,14 @@ namespace BetterAirShip.Patch {
                     if (BetterAirShip.NewSpawn.GetValue()) {
                         Spawn = AddSpawn(Location: new Vector3(-8.808f, 12.710f, 0.013f), name: StringNames.VaultRoom, Sprite:ResourceLoader.VaultSprite, Rollover:ResourceLoader.VaultAnim, RolloverSfx: Spawn[0].RolloverSfx, array: Spawn);
                         Spawn = AddSpawn(Location: new Vector3(-19.278f, -1.033f, 0), name: StringNames.Cockpit, Sprite: ResourceLoader.CokpitSprite, Rollover: ResourceLoader.CokpitAnim, RolloverSfx: Spawn[0].RolloverSfx, array: Spawn);
-                        Spawn = AddSpawn(Location: new Vector3(25.246f, -9.831f, 0f), name: StringNames.Medical, Sprite: ResourceLoader.MedicalSprite, Rollover: ResourceLoader.MedicalAnim, RolloverSfx: Spawn[0].RolloverSfx, array: Spawn);
+                        Spawn = AddSpawn(Location: new Vector3(29.041f, -6.336f, 0), name: StringNames.Medical, Sprite: ResourceLoader.MedicalSprite, Rollover: ResourceLoader.MedicalAnim, RolloverSfx: Spawn[0].RolloverSfx, array: Spawn);
 
                         __instance.Locations = Spawn;
                     }
 
                     if (BetterAirShip.TypeSpawn.GetValue() != 0){
                         if (BetterAirShip.TypeSpawn.GetValue() == 1)
-                            __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { BetterAirShip.NewSpawn.GetValue() ? Spawn[7] : Spawn[3], Spawn[2], Spawn[5] };
+                            __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { BetterAirShip.NewSpawn.GetValue() ? Spawn[7] : Spawn[3], Spawn[6], Spawn[8] }; // Spawn[7] : Spawn[3], Spawn[2], Spawn[5]
                         else if (BetterAirShip.TypeSpawn.GetValue() == 2)
                             __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { Spawn[SpawnPoints[0]], Spawn[SpawnPoints[1]], Spawn[SpawnPoints[2]] };
                     }

@@ -26,13 +26,10 @@ namespace BetterAirShip {
         public static CustomNumberOption minTimeDoor = CustomNumberOption.AddNumber("Min time for door swipe", 0.4f, 0f, 10f, 0.05f);
 
         public static CustomOptionHeader AirshipTasksHeader = CustomOptionHeader.AddHeader("[0015CCFF]BetterAirShip Tasks :[]");
-        public static CustomToggleOption MoveFirstAdmin = CustomToggleOption.AddToggle("Move Original Admin", false);
-        public static CustomToggleOption SecondAdmin = CustomToggleOption.AddToggle("Add Second Admin", false);
-        public static CustomToggleOption MoveElectricalReactor = CustomToggleOption.AddToggle("Move Electical GapRoom", false);
-        public static CustomToggleOption MoveElectricalCargo = CustomToggleOption.AddToggle("Move Electical Cargo", false);
-        public static CustomToggleOption CargoGas = CustomToggleOption.AddToggle("Move Electrical", false);
+        public static CustomStringOption MoveAdmin = CustomToggleOption.AddString("Move Admin", new string[] {"Don't Move" , "Move To Right of Cockpit", "Move To Main Hall"});
+        public static CustomStringOption MoveElectrical = CustomToggleOption.AddString("Move Electical GapRoom", new string[] {"Don't Move", "Move To Vault", "Move To Electrical"});
+        public static CustomToggleOption CargoGas = CustomToggleOption.AddToggle("Move Fuel", false);
         public static CustomToggleOption VitalsMedbay = CustomToggleOption.AddToggle("Move Vitals", false);
-        public static CustomToggleOption Fuel = CustomToggleOption.AddToggle("Move Fuel", false);
         public static CustomToggleOption Divert = CustomToggleOption.AddToggle("Move Divert", false);
 
         public override void Load() {
