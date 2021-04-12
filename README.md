@@ -8,6 +8,7 @@ This mod makes the AirShip map more customizable and playable by fixing all the 
 # Releases :
 | Among Us - Version| Mod Version | Link |
 |----------|-------------|-----------------|
+| 2020.3.31.3s | V1.1.0 | [Download](https://github.com/Evan91380/BetterAirShip/releases/download/V1.1/Among.Us.zip) |
 | 2020.3.31.3s | V1.0.0 | [Download](https://github.com/Evan91380/BetterAirShip/releases/download/v1/Among.Us.zip) |
 <details> <summary>Changelog</summary>
 # Inital Version
@@ -32,20 +33,27 @@ No Changelog here for the moment.
 
 | Name | Description | Type | Default |
 |----------|-------------|-------------|-------------|
-| Type of Spawn | Defined, the mode of appearance. | Normal / Fixed / Random | Normal
+| Spawn type | Defined, the mode of appearance. | Normal / Fixed / Random | Normal
 | Add new spawn | Allows to define if the new appearance places are added. | On / Off | Off
-| Choose spawn after meeting | Allows to tell, if the appearance interface appears after a meeting. | On / Off | Off |
+| Meeting respawn | Allows to tell, if the appearance interface appears after a meeting. | On / Off | Off |
+| Call Plateform Button | Add a button to call the plateform in gap room. | On / Off | Off
+| Meeting/security teleportation | Add a teleportation beetween Meeting and security (only meeting to security) | On / Off | Off
 | Min time for door swipe | Defines the minimum time to pass the card. | Seconds | 0.4s
+| Move admin | Move admin to a new place | Don't move/ Right of Cockpit/Main Hall | Don't move
+| Move Electrical GapRoom | Move electrical to a new place | Don't move/Vault/Electrical | Don't move
+| Move Fuel | Move fuel in cargo bay closer to the door | On / Off | Off
+| Move Vitals | Inverse the position of Vitals and Download in medicals | On / Off | Off
+| Move Divert | Move divert in main hall | On / Off | Off
 
 
 ## More Spawn Point :
-From us point of appearance on AirShip, which allow more flexibility.
-A total of 2 new appearance points have arrived.
+From us point of appearance on AirShip, wdhich allow more flexibility.
+A total of 3 new appearance points have arrived.
 With custom animations, and sound design in the future.
 
-| Cockpit | Vault |
+| Cockpit, Vault and Medical |
 |----------|:-------------:|
-| ![Figure 1-1](https://cdn.discordapp.com/attachments/720974768806821898/829723251147276328/Screenshot_4.png) | ![Figure 1-1](https://cdn.discordapp.com/attachments/813549021675257926/829400582610616400/Screenshot_5.png) |
+| ![Figure 1-1](https://cdn.discordapp.com/attachments/720974768806821898/830926722970943548/Screenshot_5.png) |
 
 ## Meeting Respawn
 A new option allows you to define whether the appearance menu appears after a meeting.
@@ -61,6 +69,33 @@ In case it is deactivated, the players appear around the meeting table.
 ## Door :
 A game option has been added for the minimum time to pass the card on the AirShip doors.
 As the game does not have a maximum time to pass the map, no game options are associated with the maximum time.
+
+## Move admin :
+| Don't move | Right of Cockpit | Main Hall |
+|----------|:-------------:|
+| ![Figure 1-1](https://imgur.com/Vc15SY2) | ![Figure 1-1](https://imgur.com/W8SIWmL) | ![Figure 1-1](https://imgur.com/bSJeXsz) |
+
+## Move Electricity in gap room :
+| Don't move | Vault | Electricity |
+|----------|:-------------:|
+| ![Figure 1-1](https://imgur.com/H2FJM9g) | ![Figure 1-1](https://imgur.com/nQseQKk) | ![Figure 1-1](https://imgur.com/MFkSvNi) |
+
+## Move Vitals :
+| Off | On |
+|----------|:-------------:|
+| ![Figure 1-1](https://imgur.com/aePtR5K) | ![Figure 1-1](https://imgur.com/C0ZUh8i) |
+
+## Move Fuel :
+| Off | On |
+|----------|:-------------:|
+| ![Figure 1-1](https://imgur.com/udZxp8K) | ![Figure 1-1](https://imgur.com/AIFJAvK) |
+
+## Move Divert :
+| Off | On |
+|----------|:-------------:|
+| ![Figure 1-1](https://imgur.com/EyKTm8m) | ![Figure 1-1](https://imgur.com/WANt6k9) |
+
+
 
 ---------------
 
