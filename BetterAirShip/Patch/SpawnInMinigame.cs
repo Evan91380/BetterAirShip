@@ -28,7 +28,7 @@ namespace BetterAirShip.Patch {
 
                     if (BetterAirShip.TypeSpawn.GetValue() != 0){
                         if (BetterAirShip.TypeSpawn.GetValue() == 1)
-                            __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { BetterAirShip.NewSpawn.GetValue() ? Spawn[7] : Spawn[3], Spawn[6], Spawn[8] }; // Spawn[7] : Spawn[3], Spawn[2], Spawn[5]
+                            __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { BetterAirShip.NewSpawn.GetValue() ? Spawn[7] : Spawn[3], Spawn[2], Spawn[5] }; 
                         else if (BetterAirShip.TypeSpawn.GetValue() == 2)
                             __instance.Locations = new SpawnInMinigame.SpawnLocation[3] { Spawn[SpawnPoints[0]], Spawn[SpawnPoints[1]], Spawn[SpawnPoints[2]] };
                     }

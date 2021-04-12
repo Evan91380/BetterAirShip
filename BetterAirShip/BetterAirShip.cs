@@ -18,7 +18,7 @@ namespace BetterAirShip {
         public Harmony Harmony { get; } = new Harmony(Id);
 
         public static CustomOptionHeader AirshipHeader = CustomOptionHeader.AddHeader("[0015CCFF]BetterAirShip General :[]");
-        public static CustomStringOption TypeSpawn = CustomStringOption.AddString("Type Of Spawn", new string[] { "Normal", "Fixed", "Synchronized" });
+        public static CustomStringOption TypeSpawn = CustomStringOption.AddString("Type Of Spawn", new string[] { "Normal", "Fixed", "Random Synchronized" });
         public static CustomToggleOption NewSpawn = CustomToggleOption.AddToggle("Add new spawn", false);
         public static CustomToggleOption MeetingRespawn = CustomToggleOption.AddToggle("Meeting Respawn", false);
         public static CustomToggleOption CallPlateform = CustomToggleOption.AddToggle("Call Plateform Button", false);
