@@ -12,7 +12,7 @@ namespace BetterAirShip.Patch {
             List<byte> randomList = new List<byte>();
             byte MyNumber = 0;
 
-            MessageWriter messageWriter = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SetSpawn, SendOption.None, -1);
+            MessageWriter messageWriter = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SetSpawnAirship, SendOption.None, -1);
 
             randomList = new List<byte>();
 

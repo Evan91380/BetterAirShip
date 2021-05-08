@@ -36,6 +36,7 @@ namespace BetterAirShip.Patch {
                 }
 
                 __instance.Close();
+                PlayerControl.LocalPlayer.gameObject.SetActive(true);
                 PlayerControl.LocalPlayer.NetTransform.RpcSnapTo(GetMeetingPosition(PlayerControl.LocalPlayer.PlayerId)) ;
                 return false;
             }

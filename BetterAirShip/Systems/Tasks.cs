@@ -8,7 +8,8 @@ using UnityEngine;
 namespace BetterAirShip.Systems {
 
     [RegisterInIl2Cpp]
-    class Tasks : MonoBehaviour {
+    class Tasks : MonoBehaviour
+    {
         public Tasks(IntPtr ptr) : base(ptr) { }
 
         public static List<GameObject> AllCustomPlateform = new List<GameObject>();
@@ -19,7 +20,8 @@ namespace BetterAirShip.Systems {
         public byte Id;
         public Action OnClick;
 
-        private void Awake() {
+        private void Awake()
+        {
             renderer = gameObject.AddComponent<SpriteRenderer>();
             renderer.material = new Material(Shader.Find("Sprites/Outline"));
             renderer.sprite = ResourceLoader.TaskSprite;
@@ -30,13 +32,15 @@ namespace BetterAirShip.Systems {
             collider.edgeRadius = 0.1f;
         }
 
-        public float CanUse(GameData.PlayerInfo PC, out bool CanUse) {
+        public float CanUse(GameData.PlayerInfo PC, out bool CanUse)
+        {
             PlayerControl Player = PC.Object;
             Vector2 truePosition = Player.GetTruePosition();
             CanUse = (!PC.IsDead && Player.CanMove && !CallPlateform.PlateformIsUsed && !UnityEngine.Object.FindObjectOfType<MovingPlatformBehaviour>().InUse);
             float Distance = float.MaxValue;
 
-            if (CanUse) {
+            if (CanUse)
+            {
                 Distance = Vector2.Distance(truePosition, transform.position);
                 CanUse &= (Distance <= UsableDistance);
             }
@@ -44,19 +48,23 @@ namespace BetterAirShip.Systems {
             return Distance;
         }
 
-        public void Use(PlayerControl LocalPlayer) {
+        public void Use(PlayerControl LocalPlayer)
+        {
             OnClick();
         }
 
-        public void SetOutline(bool On) {
-            if (renderer) {
-                renderer.material.SetFloat("_Outline", (float) (On ? 1 : 0f));
+        public void SetOutline(bool On)
+        {
+            if (renderer)
+            {
+                renderer.material.SetFloat("_Outline", (float)(On ? 1 : 0f));
                 renderer.material.SetColor("_OutlineColor", Color.white);
                 renderer.material.SetColor("_AddColor", On ? Color.white : Color.clear);
             }
         }
 
-        public static void CreateThisTask(Vector3 Position, Vector3 Rotation, Action OnClick) {
+        public static void CreateThisTask(Vector3 Position, Vector3 Rotation, Action OnClick)
+        {
             GameObject CallPlateform = new GameObject("Call Plateform");
             CallPlateform.transform.position = Position;
             CallPlateform.transform.localRotation = Quaternion.Euler(Rotation);
@@ -70,16 +78,20 @@ namespace BetterAirShip.Systems {
             AllCustomPlateform.Add(CallPlateform);
         }
 
-        public static void ClosestTasks(PlayerControl Player) {
+        public static void ClosestTasks(PlayerControl Player)
+        {
             NearestTask = null;
 
-            foreach (var CustomElectrical in AllCustomPlateform) {
+            foreach (var CustomElectrical in AllCustomPlateform)
+            {
                 Tasks component = CustomElectrical.GetComponent<Tasks>();
                 component.SetOutline(false);
-                if (component != null && ((!Player.Data.IsDead && (!AmongUsClient.Instance || !AmongUsClient.Instance.IsGameOver) && Player.CanMove) || !Player.inVent)) {
+                if (component != null && ((!Player.Data.IsDead && (!AmongUsClient.Instance || !AmongUsClient.Instance.IsGameOver) && Player.CanMove) || !Player.inVent))
+                {
                     float Distance = component.CanUse(Player.Data, out bool CanUse);
 
-                    if (CanUse && Distance < component.UsableDistance) {
+                    if (CanUse && Distance < component.UsableDistance)
+                    {
                         NearestTask = component;
                         component.SetOutline(true);
                     }
@@ -89,17 +101,22 @@ namespace BetterAirShip.Systems {
     }
 
     [HarmonyPatch(typeof(LobbyBehaviour), nameof(LobbyBehaviour.Start))]
-    public static class ResetUseButton {
-        public static void Prefix() {
+    public static class ResetUseButton
+    {
+        public static void Prefix()
+        {
             Tasks.AllCustomPlateform.Clear();
             Tasks.NearestTask = null;
         }
     }
 
     [HarmonyPatch(typeof(UseButtonManager), nameof(UseButtonManager.DoClick))]
-    public static class UseButtonOnClickPatch {
-        public static bool Prefix(UseButtonManager __instance) {
-            if (__instance.isActiveAndEnabled && PlayerControl.LocalPlayer && Tasks.NearestTask != null && Tasks.AllCustomPlateform != null) {
+    public static class UseButtonOnClickPatch
+    {
+        public static bool Prefix(UseButtonManager __instance)
+        {
+            if (__instance.isActiveAndEnabled && PlayerControl.LocalPlayer && Tasks.NearestTask != null && Tasks.AllCustomPlateform != null)
+            {
                 Tasks.NearestTask.Use(PlayerControl.LocalPlayer);
                 return false;
             }
@@ -109,10 +126,13 @@ namespace BetterAirShip.Systems {
     }
 
     [HarmonyPatch(typeof(UseButtonManager), nameof(UseButtonManager.SetTarget))]
-    public static class UseButtonSetTargetPatch {
-        public static bool Prefix(UseButtonManager __instance) {
+    public static class UseButtonSetTargetPatch
+    {
+        public static bool Prefix(UseButtonManager __instance)
+        {
             Tasks.ClosestTasks(PlayerControl.LocalPlayer);
-            if (__instance.isActiveAndEnabled && PlayerControl.LocalPlayer && Tasks.NearestTask != null && Tasks.AllCustomPlateform != null) {
+            if (__instance.isActiveAndEnabled && PlayerControl.LocalPlayer && Tasks.NearestTask != null && Tasks.AllCustomPlateform != null)
+            {
                 __instance.UseButton.color = new Color(1f, 1f, 1f, 1f);
                 return false;
             }

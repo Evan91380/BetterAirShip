@@ -39,7 +39,7 @@ namespace BetterAirShip.Utility {
             player.HatRenderer.BackLayer.color = toSetColor;
             player.HatRenderer.color = toSetColor;
             player.MyPhysics.Skin.layer.color = toSetColor;
-            player.nameText.Color = toSetColor;
+            player.nameText.color = toSetColor;
         }
 
         public void Telportation(Vector2 position, PlayerControl player) {
