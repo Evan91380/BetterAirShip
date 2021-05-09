@@ -16,6 +16,8 @@ namespace BetterAirShip.Patch {
 
         public static void Prefix(PlayerControl __instance)
         {
+            if(__instance.PlayerId != PlayerControl.LocalPlayer.PlayerId)
+                return;
             if (BetterAirShip.Teleportation.GetValue())
             {
                 if (!TeleportationStarted && Vector2.Distance(__instance.transform.position, new Vector2(17.331f, 15.236f)) < 0.5f && UnityEngine.Object.FindObjectOfType<AirshipStatus>() != null)
