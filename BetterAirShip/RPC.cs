@@ -1,6 +1,6 @@
 namespace BetterAirShip {
     public enum CustomRPC {
-        SetSpawnAirship = 200,
+        SetSpawnAirship = 100,
         DoorSyncToilet,
         SyncPlateform
     }

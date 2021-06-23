@@ -1,14 +1,14 @@
 ﻿using BepInEx;
 using BepInEx.IL2CPP;
 using BepInEx.Logging;
-using Essentials.Options;
+using HardelAPI.CustomOptions;
+using HardelAPI.Reactor;
 using HarmonyLib;
-using Reactor;
 
 namespace BetterAirShip {
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
-    [BepInDependency(ReactorPlugin.Id)]
+    [BepInDependency(HardelAPI.HardelApiPlugin.Id)]
 
     public class BetterAirShip : BasePlugin {
         public const string Id = "fr.evanhardel.betterairship";
@@ -23,6 +23,7 @@ namespace BetterAirShip {
         public static CustomToggleOption CallPlateform = CustomToggleOption.AddToggle("Call Plateform Button", false);
         public static CustomToggleOption Teleportation = CustomToggleOption.AddToggle("Meeting/Security teleportation", false);
         public static CustomNumberOption minTimeDoor = CustomNumberOption.AddNumber("Min time for door swipe", 0.4f, 0f, 10f, 0.05f);
+        public static CustomNumberOption CrashCourseTime = CustomNumberOption.AddNumber("Time for crash course sabotage", 90f, 30f, 100f, 5f);
 
         public static CustomOptionHeader AirshipTasksHeader = CustomOptionHeader.AddHeader("<color=#0015CCFF>BetterAirShip Tasks :</color>");
         public static CustomStringOption MoveAdmin = CustomToggleOption.AddString("Move Admin", new string[] { "Don't Move", "Move To Right of Cockpit", "Move To Main Hall" });
@@ -48,6 +49,9 @@ namespace BetterAirShip {
             AirshipTasksHeader.HudStringFormat = (option, name, value) => $"\n{name}";
 
             minTimeDoor.ValueStringFormat = (_, value) => $"{value}s";
+            CrashCourseTime.ValueStringFormat = (_, value) => $"{value}s";
+
+
         }
     }
 }

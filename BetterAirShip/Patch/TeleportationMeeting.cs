@@ -1,5 +1,5 @@
-﻿using HarmonyLib;
-using Reactor;
+﻿using HardelAPI.Reactor;
+using HarmonyLib;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +16,8 @@ namespace BetterAirShip.Patch {
 
         public static void Prefix(PlayerControl __instance)
         {
+            if (__instance == null) return;
+            if (__instance.Data == null) return;
             if(__instance.PlayerId != PlayerControl.LocalPlayer.PlayerId)
                 return;
             if (BetterAirShip.Teleportation.GetValue())

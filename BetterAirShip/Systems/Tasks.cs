@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using BetterAirShip.Patch;
+using HardelAPI.Reactor;
 using HarmonyLib;
-using Reactor;
 using UnityEngine;
 
 namespace BetterAirShip.Systems {
