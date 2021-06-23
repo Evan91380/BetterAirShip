@@ -9,11 +9,10 @@ namespace BetterAirShip.Patch {
     }
 
     [HarmonyPatch(typeof(HeliSabotageSystem), nameof(HeliSabotageSystem.UpdateHeliSize))]
-    class HeliCountDown
-    {
-        public static void Prefix(HeliSabotageSystem __instance)
-        {
-            if (__instance.Countdown > BetterAirShip.CrashCourseTime.GetValue()) __instance.Countdown = BetterAirShip.CrashCourseTime.GetValue();
+    class HeliCountDown {
+        public static void Prefix(HeliSabotageSystem __instance) {
+            if (__instance.Countdown > BetterAirShip.CrashCourseTime.GetValue())
+                __instance.Countdown = BetterAirShip.CrashCourseTime.GetValue();
         }
     }
 }

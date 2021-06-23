@@ -8,11 +8,11 @@ namespace BetterAirShip.Patch {
     [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.RpcSetInfected))]
     class SetInfectedPatch {
         public static void Postfix() {
-            Random random = new Random(); 
+            Random random = new Random();
             List<byte> randomList = new List<byte>();
             byte MyNumber = 0;
 
-            MessageWriter messageWriter = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SetSpawnAirship, SendOption.None, -1);
+            MessageWriter messageWriter = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte) CustomRPC.SetSpawnAirship, SendOption.None, -1);
 
             randomList = new List<byte>();
 

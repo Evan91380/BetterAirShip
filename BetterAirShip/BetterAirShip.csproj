@@ -2,35 +2,24 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <Version>1.0.0</Version>
-        <GameVersion>2021.5.10</GameVersion>
-        <Description>Better AirShip</Description>
-        <Authors>Evan and Hardel</Authors>
+        <Description>Better AriShip</Description>
+        <Authors>Hardel and Evan</Authors>
     </PropertyGroup>
 
-	<PropertyGroup Condition="'$(GamePlatform)' == 'Steam'">
-		<GameVersion>$(GameVersion)s</GameVersion>
-		<DefineConstants>$(DefineConstants);STEAM</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(GamePlatform)' == 'Itch'">
-		<GameVersion>$(GameVersion)I</GameVersion>
-		<DefineConstants>$(DefineConstants);ITCH</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(GamePlatform)' == 'EpicGame'">
-		<GameVersion>$(GameVersion)e</GameVersion>
-		<DefineConstants>$(DefineConstants);EpicGame</DefineConstants>
-	</PropertyGroup>
-
     <ItemGroup>
-		    <Reference Include="$(AmongUs)/BepInEx/core/*.dll" />
-		    <Reference Include="$(AmongUs)/BepInEx/unhollowed/*.dll" />
-			<Reference Include="$(AmongUs)\BepInEx\plugins\HardelAPI-$(GameVersion).dll" />
-		    <EmbeddedResource Include="Resource\airship" />
+        <Reference Include="$(AmongUs)\BepInEx\core\*.dll">
+          <Private>false</Private>
+        </Reference>
+
+        <Reference Include="$(AmongUs)\BepInEx\unhollowed\*.dll">
+          <Private>false</Private>
+        </Reference>
+      
+        <Reference Include="$(AmongUs)\BepInEx\plugins\Harion.dll" />
+        <EmbeddedResource Include="Resources\*" />
     </ItemGroup>
-	
-	<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
-		<Message Text="Second occurrence" />
-		<Copy SourceFiles="$(ProjectDir)\bin\Debug\netstandard2.1\BetterAirShip.dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" />
-	</Target>
+    
+    <Target Name="Copy" AfterTargets="PostBuildEvent">
+      <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFiles="$(AmongUs)/BepInEx/plugins/$(AssemblyName).dll" />
+    </Target>
 </Project>

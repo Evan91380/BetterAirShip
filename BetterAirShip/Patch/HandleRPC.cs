@@ -25,8 +25,7 @@ namespace BetterAirShip.Patch {
                 return false;
             }
 
-            if (CallId == (byte)CustomRPC.SyncPlateform)
-            {
+            if (CallId == (byte) CustomRPC.SyncPlateform) {
                 bool isLeft = reader.ReadBoolean();
                 CallPlateform.SyncPlateform(isLeft);
 

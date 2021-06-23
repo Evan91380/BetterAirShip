@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
-using HardelAPI.Reactor;
-using HardelAPI.Utility.Utils;
+using Harion.Reactor;
+using Harion.Utility.Utils;
 using UnityEngine;
 
 namespace BetterAirShip {
-    public static class ResourceLoader {
-        private static readonly Assembly myAsembly = Assembly.GetExecutingAssembly();
+    public static class AssetsLoader {
+        private static readonly Assembly MyAssembly = Assembly.GetExecutingAssembly();
         public static Sprite VaultSprite;
         public static Sprite CokpitSprite;
         public static Sprite TaskSprite;
@@ -16,7 +16,7 @@ namespace BetterAirShip {
         public static GameObject CallPlateform;
 
         public static void LoadAssets() {
-            var resourceSteam = myAsembly.GetManifestResourceStream("BetterAirShip.Resource.airship");
+            var resourceSteam = MyAssembly.GetManifestResourceStream("BetterAirShip.Resources.Airship");
             var assetBundle = AssetBundle.LoadFromMemory(resourceSteam.ReadFully());
             VaultSprite = assetBundle.LoadAsset<Sprite>("Vault").DontDestroy();
             CokpitSprite = assetBundle.LoadAsset<Sprite>("Cokpit").DontDestroy();
